@@ -149,8 +149,6 @@ void printQueenAll(Queen *queen)
         printf(">>>> Queen result : %d\n", i++);
         printQueenOne(curr->position, queen->n);
     }
-
-    return result;
 }
 
 /*
@@ -220,7 +218,7 @@ char*** solveNQueens(int n, int* returnSize, int** returnColumnSizes){
         (*returnColumnSizes)[i] = n;
     }
 
-    //printQueenAll(queen);
+    printQueenAll(queen);
     destoryQueen(queen);
 
     return result;

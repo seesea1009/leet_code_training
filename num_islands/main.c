@@ -111,10 +111,16 @@ int numIslands(char** grid, int gridSize, int* gridColSize){
 }
 
 void testcase_01() {
-    char grids[4][5] = {{'1','1','1','1','0'},{'1','1','0','1','0'},{'1','1','0','0','0'},{'0','0','0','0','0'}};
-    char *grid[4] = {grids[0], grids[1], grids[2], grids[3]};
-    int gridSize = 4;
-    int gridColSize[4] = {5, 5, 5, 5};
+    char grids[][5] = {{'1','1','1','1','0'},{'1','1','0','1','0'},{'1','1','0','0','0'},{'0','0','0','0','0'}};
+    int gridSize = sizeof(grids) / sizeof(grids[0]);
+    int gridColSize[gridSize];
+    char *grid[gridSize];
+    
+    for (int i = 0; i < gridSize; i++) {
+        gridColSize[i] = sizeof(grids[i]);
+        grid[i] = grids[i];
+    }
+
     int num = numIslands(grid, gridSize, gridColSize);
     printf("island num is [%d]\n", num);
 }

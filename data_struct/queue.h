@@ -77,4 +77,4 @@ static inline void queue_free(struct queue *q) {
     }
 }
 
-#endif  /* __queue_H__ */
+#endif  /* __QUEUE_H__ */
